@@ -1,11 +1,13 @@
 // # Fase di preparazione
 //recupero gli elementi
 const numbersList = document.getElementById('pc-numbers');
-const userNumber = document.getElementById('user-number');
 const playButton = document.getElementById('play-button');
+const userNumber = document.getElementById('user-number');
+const inputElement = document.querySelectorAll('input');
+console.log(userNumber, inputElement);
 //creo l'array di numeri vuoto
 let randomNumbers = [];
-
+let userNumbers = [];
 
 // # Funzioni
 //genero dei numeri casuali da 1 a 100
@@ -13,7 +15,7 @@ function getNumbers() {
     const cpuNumbers = Math.floor(Math.random() * 100 + 1);
     return cpuNumbers;
 }
-console.log(getNumbers());
+
 
 // Genero 5 numeri e creo lista
 function pcNumbers() {
@@ -33,3 +35,11 @@ function pcNumbers() {
 }
 
 pcNumbers();
+
+//inserisco i numeri dell'utente nell'array al click del bottone
+playButton.addEventListener('click', function (event) {
+    // ! prevengo l'invio del form
+    event.preventDefault();
+
+
+})
