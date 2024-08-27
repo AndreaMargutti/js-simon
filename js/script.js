@@ -1,7 +1,7 @@
 // # Fase di preparazione
 //recupero gli elementi
-const numbersList = document.getElementById('pc-numbers');
-const listElement = document.querySelectorAll('li');
+let numbersList = document.getElementById('pc-numbers');
+
 
 // # Funzioni
 //genero dei numeri casuali da 1 a 100
@@ -18,6 +18,12 @@ for (let i = 0; i < 5; i++) {
     //genero un numero casuale per 5 volte
     getNumbers(i);
     //lo inserisco nell'array
-    randomNumbers.push(i);
+    randomNumbers.push(getNumbers(i));
+    let listElement = document.createElement('li');
+    listElement.classList.add('list-group-item')
+
+    listElement.innerText = randomNumbers[i];
+    numbersList.appendChild(listElement);
 }
-console.log(randomNumbers); 
+
+console.log(randomNumbers);
